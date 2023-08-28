@@ -17,6 +17,12 @@
             <i class="fa fa-solid fa-user"></i>
             <a style="color:black" href="authors.php">Autorët</a>
           </li>
+          <?php if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){ ?>
+            <li class="listat">
+            <i class="fa fa-solid fa-user-plus"></i>
+            <a style="color:black" href="./pages/dashboard.php">Dashboard</a>
+          </li>
+          <?php } ?>
           <?php if(isset($_SESSION['role'])){ ?>
             <li style="cursor:pointer" onClick="logout()" class="listat">
 
