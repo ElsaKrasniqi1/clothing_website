@@ -4,7 +4,7 @@ session_start();
 
 if (!isset($_POST['usernameRegister']) || !isset($_POST['passwordRegister']) || !isset($_POST['emailRegister'])) {
  
-        header("Location: /projekti_ueb/pages/signup.php");
+        header("Location: ../pages/signup.php");
 
         $_SESSION['message'] = "Please fill all fields!";
 
@@ -31,16 +31,15 @@ if (isset($_POST['emailRegister'])) {
 
     if ($count['numberOfUsers'] > 0) {
         $_SESSION['message'] = 'A user exist with the same email!';
-        header("Location: ./");
-        die();
+        header("Location: ../pages/signup.php");
     } else {
     }
 }
 if (empty($_POST['usernameRegister']) || strlen($_POST['usernameRegister']) < 6 || strlen($_POST['usernameRegister']) > 22) {
-    header("Location: /projekti_ueb/pages/signup.php?message=Username_is_Blank_or_to_short");
+    header("Location: ../pages/signup.php?");
     $_SESSION['message'] = 'Username should be at least 6 characters and max 22 characters';
 } else if (empty($_POST['passwordRegister']) || strlen($_POST['passwordRegister']) < 6 || strlen($_POST['passwordRegister']) > 22) {
-    header("Location: /projekti_ueb/pages/signup.php?message=password_is_invalid");
+    header("Location:../pages/signup.php");
     $_SESSION['message'] = 'Password should be at least 6 characters and max 22 characters';
 } else if (isset($_POST['usernameRegister']) && isset($_FILES['image']) && isset($_POST['passwordRegister'])) {
     $name = validate($_POST['usernameRegister']);
@@ -59,14 +58,14 @@ if (empty($_POST['usernameRegister']) || strlen($_POST['usernameRegister']) < 6 
     if ($query->execute()) {
             $_SESSION['message'] = "You just created a new Account!";
 
-            header("Location: /projekti_ueb/pages/signup.php");
+            header("Location: ../pages/signup.php");
         
     } else {
         
-        header("Location:/projekti_ueb/pages/signup.php");
+        header("Location:../pages/signup.php");
     }
 } else {
-    header("Location: /projekti_ueb/pages/signup.php");
+    header("Location: ../pages/signup.php");
 
     $_SESSION['message'] = "Something Went Wrong Try Again!";
 }

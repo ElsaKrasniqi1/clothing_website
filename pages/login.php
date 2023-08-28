@@ -55,7 +55,7 @@
 <body>
 
     <div class="form">
-        <h1 id="title">Sign Up</h1>
+        <h1 id="title">Login</h1>
         <form  action="../php/login.php" method="post" onsubmit="return handleLogin()">
             <div class="input">
                 

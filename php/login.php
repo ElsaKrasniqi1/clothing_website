@@ -27,7 +27,7 @@ if (empty($_POST['emailLogin']) || strlen($_POST['emailLogin']) < 6 ) {
     $user = $query->fetch();
 
     if ($email == $user['email'] && password_verify($password, $user['password'])) {
-
+        
         $_SESSION['id'] = $user['id'];
         $_SESSION['username'] = $user['user_name'];
         $_SESSION['email'] = $user['email'];
@@ -37,7 +37,7 @@ if (empty($_POST['emailLogin']) || strlen($_POST['emailLogin']) < 6 ) {
         header("Location: ../index.php");
     } else {
         $_SESSION['message'] = 'Your username or password is wrong!';
-        header("Location: ?message=Your username or password is wrong!");
+        header("Location: ../pages/login.php");
 
     }
 }

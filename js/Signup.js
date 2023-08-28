@@ -96,27 +96,40 @@ function handleRegister() {
         });
         return false;
     }
-    if (email.value.length < 6) {
-        Swal.fire({
-            title: 'Failed!',
-            text: 'Email is too short, should be more than 6 characters and less than 21!',
-            imageUrl: '/projekti_ueb/images/fail.jpg',
-            imageWidth: 300,
-            imageAlt: 'Custom image',
-        });
-        return false;
-    }
 
-    if (email.value.length > 21) {
+    if (!email.value.includes("@")) {
         Swal.fire({
             title: 'Failed!',
-            text: 'Email is too large, should be less than 21 and more than 6 characters!',
+            text: '"@" is missing in at the Email!',
             imageUrl: '/projekti_ueb/images/fail.jpg',
             imageWidth: 300,
             imageAlt: 'Custom image',
-        });
+        });  
         return false;
     }
+    
+
+    // if (email.value.length < 6) {
+    //     Swal.fire({
+    //         title: 'Failed!',
+    //         text: 'Email is too short, should be more than 6 characters and less than 21!',
+    //         imageUrl: '/projekti_ueb/images/fail.jpg',
+    //         imageWidth: 300,
+    //         imageAlt: 'Custom image',
+    //     });
+    //     return false;
+    // }
+
+    // if (email.value.length > 21) {
+    //     Swal.fire({
+    //         title: 'Failed!',
+    //         text: 'Email is too large, should be less than 21 and more than 6 characters!',
+    //         imageUrl: '/projekti_ueb/images/fail.jpg',
+    //         imageWidth: 300,
+    //         imageAlt: 'Custom image',
+    //     });
+    //     return false;
+    // }
 
     if (password.value.length == 0) {
         Swal.fire({
@@ -152,7 +165,7 @@ function handleRegister() {
     
    
 
-    if (isValid(username, "Username") && isValid(email, "Email") && isValid(password, "Password")) {
+    if (isValid(username, "Username")&& isValid(password, "Password")) {
         Swal.fire({
             title: 'Success!',
             text: 'Your account was created successfully!',
@@ -174,8 +187,8 @@ function handleRegister() {
 }
 
 const handleLogin = ()=>{
-    const email = document.querySelector(".emailInput");
-    const password = document.querySelector(".passwordInput");
+    const email = document.querySelector(".emailLogin");
+    const password = document.querySelector(".passwordLogin");
 
     if (email.value.length == 0) {
        
@@ -199,7 +212,17 @@ const handleLogin = ()=>{
         });
         return false;
     }
-
+    if (!email.value.includes(".com") || !email.value.includes(".net") || !email.value.includes(".de") || !email.value.includes(".org") || !email.value.includes(".edu")) {
+       
+        Swal.fire({
+            title: 'Failed!',
+            text: 'Email should contain a .com, .net or other endings!',
+            imageUrl: '/projekti_ueb/images/fail.jpg',
+            imageWidth: 300,
+            imageAlt: 'Custom image',
+        });
+        return false;
+    }
     if (password.value.length == 0) {
         Swal.fire({
             title: 'Failed!',
@@ -216,7 +239,7 @@ const handleLogin = ()=>{
     if (!email.value.length == 0 && !email.value.includes("@") && !password.value.length == 0) {
         Swal.fire({
             title: 'Success!',
-            text: 'Your account was created successfully!',
+            text: 'You logged in successfully!',
             imageUrl: '/projekti_ueb/images/sukses.jpg',
             imageWidth: 300,
             imageAlt: 'Custom image',
@@ -225,7 +248,7 @@ const handleLogin = ()=>{
     } else {
         Swal.fire({
             title: 'Failed!',
-            text: 'Your account was not created. Please try again!',
+            text: 'Login failed please check your credentials!',
             imageUrl: '/projekti_ueb/images/fail.jpg',
             imageWidth: 300,
             imageAlt: 'Custom image',
