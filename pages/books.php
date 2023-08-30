@@ -34,30 +34,31 @@
                     <a class="kategori text-muted" href="books.html">Më të lexuarit</a>
                 </div>
                 <div class="row-a">
-                    <a class="kategori text-muted" href="./booksCategory/seShepjti.html">Më të rinjë</a>
+                    <a class="kategori text-muted" href="./booksCategory/seShepjti.php">Më të rinjë</a>
                 </div>
 
                 <div class="row-a">
-                    <a class="kategori text-muted" href="./booksCategory/shqip.html">Shqip</a>
+                    <a class="kategori text-muted" href="./booksCategory/shqip.php">Shqip</a>
                 </div>
                 <div class="row-a">
-                    <a class="kategori text-muted" href="./booksCategory/Novele.html">Novelë</a>
+                    <a class="kategori text-muted" href="./booksCategory/Novele.php">Novelë</a>
                 </div>
                 <div class="row-a">
-                    <a class="kategori text-muted" href="./booksCategory/aventure.html">Aventurë</a>
+                    <a class="kategori text-muted" href="./booksCategory/aventure.php">Aventurë</a>
                 </div>
                 <div class="row-a">
-                    <a class="kategori text-muted" href="./booksCategory/mister.html">Mister</a>
+                    <a class="kategori text-muted" href="./booksCategory/mister.php">Mister</a>
                 </div>
                 <div class="row-a">
-                    <a class="kategori text-muted" href="./booksCategory/krim.html">Krim</a>
+                    <a class="kategori text-muted" href="./booksCategory/krim.php">Krim</a>
                 </div>
                 <div class="row-a">
-                    <a class="kategori text-muted" href="./booksCategory/fantazi.html">Fantazi</a>
-                    <div class="row-a">
-                        <a class="kategori text-muted" href="./OnlineLibrary-main/addBook.php">SHTO NJE LIBER</a>
-                    
+                    <a class="kategori text-muted" href="./booksCategory/fantazi.php">Fantazi</a>
                 </div>
+                <div class="row-a">
+                    <a class="kategori text-muted" href="addBook.php">SHTO NJE LIBER</a>
+                </div>
+                
             </div>
             <div class="col-lg-3">
                 <div class="card novel">

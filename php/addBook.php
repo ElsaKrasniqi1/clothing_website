@@ -1,11 +1,19 @@
 <?php
-define('USER', 'root');
-define('PWD', 'K@T/QUJ@');
+session_start();
 
-$dsn = 'mysql:host=localhost;dbname=librariaonline';
+
+if (!isset($_POST['usernameRegister']) || !isset($_POST['passwordRegister']) || !isset($_POST['emailRegister'])) {
+ 
+        header("Location: ../pages/signup.php");
+
+        $_SESSION['message'] = "Please fill all fields!";
+
+}
+
+require './dbconnect.php';
 
 try {
-  $sql = new PDO($dsn, USER, PWD);
+  $sql = new PDO($dsn, 'usernameRegister', 'passwordRegister');
 } catch (PDOException $e) {
   echo 'Connection failed: ' . $e->getMessage();
 }
