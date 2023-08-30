@@ -58,11 +58,11 @@ INSERT INTO books (Title, Copy, Branch, Cardholder, Category) VALUES
 -- Table structure for table `branches`
 --
 
-CREATE TABLE  branches (
-  BranchName varchar(80) primary key NOT NULL DEFAULT '',
-  City varchar(80) DEFAULT NULL,
-  
-); 
+  CREATE TABLE  branches (
+    BranchName varchar(80) primary key NOT NULL DEFAULT '',
+    City varchar(80) DEFAULT NULL,
+    
+  ); 
 
 --
 -- Dumping data for table `branches`
@@ -106,7 +106,6 @@ INSERT INTO cardholders (CardholderName, City) VALUES
 CREATE TABLE categories (
   CategoryName varchar(80) PRIMARY KEY NOT NULL DEFAULT '',
   Expert varchar(80) DEFAULT NULL
-  
 ) ;
 
 --

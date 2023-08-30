@@ -1,24 +1,6 @@
 <?php
 session_start();
-
-
-if (!isset($_POST['usernameRegister']) || !isset($_POST['passwordRegister']) || !isset($_POST['emailRegister'])) {
- 
-        header("Location: ../pages/signup.php");
-
-        $_SESSION['message'] = "Please fill all fields!";
-
-}
-
 require './dbconnect.php';
-
-try {
-  $sql = new PDO($dsn, 'usernameRegister', 'passwordRegister');
-} catch (PDOException $e) {
-  echo 'Connection failed: ' . $e->getMessage();
-}
-  
-
 ?>
 
 <!DOCTYPE html >
