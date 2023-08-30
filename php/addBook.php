@@ -1,13 +1,13 @@
 <?php
 session_start();
-require './dbconnect.php';
+require './db_connect.php';
 ?>
 
 <!DOCTYPE html >
 <html >
     <head>
         <title>Add Book</title>
-        <link rel="stylesheet" media="screen" type="text/css" href="design.css" />
+        <link rel="stylesheet" href="../css/addbook.css">
     </head>
     <body>
         <h1>Add Book</h1>
@@ -19,7 +19,7 @@ require './dbconnect.php';
             	<label for="branch">Branch:</label><br />
             	<select name="branch" id="branch">
             	    <?php 
-                	    foreach ($sql->query('SELECT branchname FROM Branches') as $row):
+                	    foreach ($pdo->query('SELECT branchname FROM Branches') as $row):
                 	?>
 	                <option value="<?php echo $row['branchname']; ?>"><?php echo $row['branchname']; ?></option>
 	                <?php endforeach; ?>
@@ -27,24 +27,24 @@ require './dbconnect.php';
 	            <label for="category">Category:</label><br />
 	            <select name="category" id="category">
 	                <?php 
-	                    foreach ($sql->query('SELECT categoryname FROM Categories') as $row):
+	                    foreach ($pdo->query('SELECT categoryname FROM Categories') as $row):
 	                ?>
 	                <option value="<?php echo $row['categoryname']; ?>"><?php echo $row['categoryname']; ?></option>
 	                <?php endforeach; ?>
 	            </select><br /><br />
                 <input type="submit" name="add" value="Add Book" />
-	            <input type="button" name="return" value="Return" onClick="location.href='index.php'" />
+	            <input type="button" name="return" value="Return" onClick="location.href='books.php'/>
             </p>
         </form>
 
         <?php
             if (isset($_POST['add'])) {
               if (!empty($_POST['book']) && !empty($_POST['branch']) && !empty($_POST['category'])) {
-                $sth = $sql->query("select count(*) from Books where bookname='".$_POST['book']."' and branch='".$_POST['branch']."'");
+                $sth = $pdo->query("select count(*) from Books where bookname='".$_POST['book']."' and branch='".$_POST['branch']."'");
                 $row = $sth->fetch();
                 $copy = $row[0];
                 if ($copy == 0) {
-                  $sql->exec("insert into Books (BookName, Branch, Category) values('".$_POST['book']."', '".$_POST['branch']."', '".$_POST['category']."')");
+                  $pdo->exec("insert into Books (BookName, Branch, Category) values('".$_POST['book']."', '".$_POST['branch']."', '".$_POST['category']."')");
                   echo '<p>'.$_POST['book'].' successfully added in the '.$_POST['category'].' catgeory of the '.$_POST['branch'].' branch.</p>';
                 }
                 else 
@@ -54,7 +54,7 @@ require './dbconnect.php';
                 echo '<p>All fields are required.</p>';
             }
 
-            $sql = null;
+            $pdo = null;
         ?>
 
     </body>

@@ -56,7 +56,7 @@
                     <a class="kategori text-muted" href="./booksCategory/fantazi.php">Fantazi</a>
                 </div>
                 <div class="row-a">
-                    <a class="kategori text-muted" href="addBook.php">SHTO NJE LIBER</a>
+                    <a class="kategori text-muted" href="./php/addBook.php">SHTO NJE LIBER</a>
                 </div>
                 
             </div>
