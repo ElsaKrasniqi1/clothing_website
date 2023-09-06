@@ -6,13 +6,13 @@ require './db_connect.php';
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edit Book</title>
-    <link rel="stylesheet" href="../css/editanddelete.css">
-</head>
+    <title>Delete Book</title>
+   
 <body>
-    <h1>Edit Book</h1>
-    <h3>Fill in the below fields and click on 'Edit Book'</h3>
-    <form name="EditBook" method="post" action="">
+    <h1>Delete Book</h1>
+    <link rel="stylesheet" href="../css/editanddelete.css">
+    <h3>Fill in the below fields and click on 'Delete Book'</h3>
+    <form name="DeleteBook" method="post" action="">
         <p>
             <label for="book">Book:</label><br />
             <input type="text" name="book" id="book" /><br /><br />
@@ -32,15 +32,15 @@ require './db_connect.php';
                 <option value="<?php echo $row['categoryname']; ?>"><?php echo $row['categoryname']; ?></option>
                 <?php endforeach; ?>
             </select><br /><br />
-            <input type="submit" name="edit" value="Edit Book" />
+            <input type="submit" name="delete" value="Delete Book" />
             <input type="button" name="return" value="Return" onClick="location.href='books.php'/>
         </p>
     </form>
 
     <?php
-    if (isset($_POST['edit'])) {
-        // Handle book editing logic here
-        // You can retrieve the selected book information and update it in the database
+    if (isset($_POST['delete'])) {
+        // Handle book deletion logic here
+        // You can retrieve the selected book information and delete it from the database
     }
 
     $pdo = null;
@@ -48,3 +48,4 @@ require './db_connect.php';
 
 </body>
 </html>
+
