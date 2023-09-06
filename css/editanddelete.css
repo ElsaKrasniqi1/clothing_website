@@ -1,58 +1,122 @@
-/* General Styles */
+/* editanddelete.css */
+
 body {
+    
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+    background-color: #f3f3f3;
     margin: 0;
     padding: 0;
+    background: url('../booksCategory/libra.png');
+    background-size: cover; 
 }
 
+
+
 .container {
+   justify-content: center;
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background-color: #722b2b;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+    text-align: center;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
 }
 
 h1 {
-    color: #333;
+    text-align: center;
+    color: black;
+    color-scheme: black;
+    text-decoration: wavy;
 }
 
 h3 {
-    color: #666;
-}
-
-/* Form Styles */
-form {
+    text-align: center;
+    color: black;
     margin-top: 20px;
 }
 
-label {
+form {
+    margin-top: 20px;
+    
+    
+}
+
+.label-container {
+    justify-content: center;
+    display: flex;
+    
+}
+
+.label-container label {
+    flex: 0;
     font-weight: bold;
-    color: #333;
+    color: #333333;
+    margin-bottom: center;
+    justify-content: center;
 }
 
 input[type="text"],
 select {
     width: 100%;
     padding: 10px;
-    margin: 5px 0;
+    margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 4px;
 }
 
+.select-container {
+    position: relative;
+}
+
+.select-container select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("arrow-down.png") no-repeat right center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 input[type="submit"],
 input[type="button"] {
-    padding: 10px 20px;
-    background-color: #333;
+    flex: 1;
+    background-color: #007BFF;
     color: #fff;
+    padding: 10px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-weight: bold;
 }
 
 input[type="submit"]:hover,
 input[type="button"]:hover {
-    background-color: #555;
+    background-color: #0056b3;
 }
 
+input[type="button"] {
+    background-color: #ccc;
+    color: #333;
+}
+
+input[type="button"]:hover {
+    background-color: #999;
+}

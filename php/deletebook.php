@@ -32,11 +32,13 @@ $pdo = null;
     <title>Delete Book</title>
    
 <body>
+<div class="container">
     <h1>Delete Book</h1>
     <link rel="stylesheet" href="../css/editanddelete.css">
     <h3>Fill in the below fields and click on 'Delete Book'</h3>
     <form name="DeleteBook" method="post" action="">
         <p>
+            
             <label for="book">Book:</label><br />
             <input type="text" name="book" id="book" /><br /><br />
             <label for="branch">Branch:</label><br />
@@ -58,6 +60,7 @@ $pdo = null;
             <input type="submit" name="delete" value="Delete Book" />
             <input type="button" name="return" value="Return" onClick="location.href='books.php'/>
         </p>
+                    </div>
     </form>
 
     <?php
