@@ -32,7 +32,7 @@ require './db_connect.php';
 	                <option value="<?php echo $row['categoryname']; ?>"><?php echo $row['categoryname']; ?></option>
 	                <?php endforeach; ?>
 	            </select><br /><br />
-                <input type="submit" name="add" value="Add Book" />
+                <input type="submit" name="add" value="Add Book" action="books.php" />
 	            <input type="button" name="return" value="Return" onClick="location.href='books.php'/>
             </p>
         </form>

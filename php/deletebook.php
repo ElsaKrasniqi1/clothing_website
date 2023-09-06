@@ -1,7 +1,30 @@
 <?php
 session_start();
 require './db_connect.php';
+
+if (isset($_POST['delete'])) {
+    if (!empty($_POST['book']) && !empty($_POST['branch'])) {
+        // Check if the book exists
+        $sth = $pdo->query("SELECT COUNT(*) FROM Books WHERE bookname='" . $_POST['book'] . "' AND branch='" . $_POST['branch'] . "'");
+        $row = $sth->fetch();
+        $copy = $row[0];
+
+        if ($copy > 0) {
+            // Delete the book
+            $pdo->exec("DELETE FROM Books WHERE BookName='" . $_POST['book'] . "' AND Branch='" . $_POST['branch'] . "'");
+            echo '<p>' . $_POST['book'] . ' successfully deleted from the ' . $_POST['branch'] . ' branch.</p>';
+        } else {
+            echo '<p>' . $_POST['book'] . ' does not exist in the ' . $_POST['branch'] . ' branch.</p>';
+        }
+    } else {
+        echo '<p>All fields are required.</p>';
+    }
+}
+
+$pdo = null;
+
 ?>
+
 
 <!DOCTYPE html>
 <html>

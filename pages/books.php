@@ -58,6 +58,13 @@
                 <div class="row-a">
                     <a class="kategori text-muted" href="../php/addbook.php">Shto nje liber</a>
                 </div>
+                <div class="row-a">
+                    <a class="kategori text-muted" href="../php/deletebook.php">Fshij nje liber</a>
+                </div>
+                <div class="row-a">
+                    <a class="kategori text-muted" href="../php/editbook.php">Edito nje liber</a>
+                </div>
+                
                 
             </div>
             <div class="col-lg-3">
