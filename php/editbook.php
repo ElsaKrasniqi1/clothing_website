@@ -1,26 +1,6 @@
 <?php
 session_start();
 require './db_connect.php';
-if (isset($_POST['edit'])) {
-    if (!empty($_POST['book']) && !empty($_POST['branch']) && !empty($_POST['category'])) {
-        // Check if the book exists
-        $sth = $pdo->query("SELECT COUNT(*) FROM Books WHERE bookname='" . $_POST['book'] . "' AND branch='" . $_POST['branch'] . "'");
-        $row = $sth->fetch();
-        $copy = $row[0];
-
-        if ($copy > 0) {
-            // Update the book's category
-            $pdo->exec("UPDATE Books SET Category='" . $_POST['category'] . "' WHERE BookName='" . $_POST['book'] . "' AND Branch='" . $_POST['branch'] . "'");
-            echo '<p>' . $_POST['book'] . ' successfully updated to the ' . $_POST['category'] . ' category in the ' . $_POST['branch'] . ' branch.</p>';
-        } else {
-            echo '<p>' . $_POST['book'] . ' does not exist in the ' . $_POST['branch'] . ' branch.</p>';
-        }
-    } else {
-        echo '<p>All fields are required.</p>';
-    }
-}
-
-$pdo = null;
 ?>
 
 
