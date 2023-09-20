@@ -6,7 +6,7 @@
     $artikujt=Article::getList();
     ?>
  
- <header id="header"><?php include 'header.php'?></header>
+ <header id="header"><?php include './header.php'?></header>
     <div class="main">
       <img src="images/background_2.jpg" alt="">
       <div class="content">

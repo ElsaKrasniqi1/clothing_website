@@ -1,12 +1,10 @@
-
-
 <?php
     require_once "config.php";
     require_once WEBROOT . "libs/AuthenticateUser.php";
     require_once WEBROOT . "models/User.php";
 
     if(!AuthenticateUser::is_logged()){
-        header("Location: /login.php");
+        header("Location: ../login.php");
     }
     $logged_user=User::getById(AuthenticateUser::get()["id"]);
     if(!$logged_user->isAdmin()){

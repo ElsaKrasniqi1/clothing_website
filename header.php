@@ -1,7 +1,7 @@
 <?php
     require_once "config.php";
     require_once "libs/AuthenticateUser.php";
-    require_once  'C:\xampp\htdocs\clothing_website\models\User.php';
+    require_once  './models/User.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

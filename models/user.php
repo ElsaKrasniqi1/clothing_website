@@ -1,8 +1,9 @@
 <?php
 
-require_once 'C:\xampp\htdocs\clothing_website\libs\BaseModel.php';
-require_once 'C:\xampp\htdocs\clothing_website\libs\AuthenticateUser.php';
-require_once 'C:\xampp\htdocs\clothing_website\libs\Session.php';
+require_once(__DIR__ . '/../libs/BaseModel.php');
+require_once(__DIR__ . '/../libs/AuthenticateUser.php');
+require_once(__DIR__ . '/../libs/Session.php');
+
 
 class User extends BaseModel{
     
